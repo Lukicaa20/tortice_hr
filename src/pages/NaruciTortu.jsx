@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 
-const whatsappPhone = "";
+const whatsappPhone = "385958910462";
 
 const flavors = [
   "Pistacija-malina",
@@ -55,9 +55,7 @@ function NaruciTortu() {
   }, [designImage, formData]);
 
   const whatsappLink = useMemo(() => {
-    const phonePath = whatsappPhone ? `/${whatsappPhone}` : "/";
-
-    return `https://wa.me${phonePath}?text=${encodeURIComponent(whatsappMessage)}`;
+    return `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(whatsappMessage)}`;
   }, [whatsappMessage]);
 
   const handleSubmit = (event) => {
@@ -66,11 +64,11 @@ function NaruciTortu() {
   };
 
   return (
-    <section className="order order--page" id="narudzbe" aria-labelledby="order-title">
-      <a className="back-link" href="/">
-        Nazad
-      </a>
-
+    <section
+      className="order order--page"
+      id="narudzbe"
+      aria-labelledby="order-title"
+    >
       <p className="eyebrow">Narudžba tortice</p>
       <h1 id="order-title">Složimo torticu za vaš poseban trenutak.</h1>
       <p className="order__intro">
@@ -116,7 +114,12 @@ function NaruciTortu() {
 
         <label className="order-form__field">
           <span>Okus</span>
-          <select name="flavor" value={formData.flavor} onChange={handleInputChange} required>
+          <select
+            name="flavor"
+            value={formData.flavor}
+            onChange={handleInputChange}
+            required
+          >
             <option value="">Odaberite okus</option>
             {flavors.map((flavor) => (
               <option key={flavor} value={flavor}>
@@ -129,7 +132,11 @@ function NaruciTortu() {
         <label className="order-form__field order-form__field--file">
           <span>Dizajn po slici</span>
           <input type="file" accept="image/*" onChange={handleImageChange} />
-          <small>{designImage ? designImage.name : "Dodajte inspiraciju ako je imate."}</small>
+          <small>
+            {designImage
+              ? designImage.name
+              : "Dodajte inspiraciju ako je imate."}
+          </small>
         </label>
 
         <label className="order-form__field">
