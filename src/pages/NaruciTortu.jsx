@@ -136,6 +136,9 @@ function NaruciTortu() {
         </label>
 
         <p className="order-form__price">Cijena od 20€</p>
+        <p className="order-form__price">
+          Upload slike ili ideje u nastavku whatsapp poruke
+        </p>
 
         <button className="button button--dark" type="submit">
           Pošalji narudžbu na WhatsApp
