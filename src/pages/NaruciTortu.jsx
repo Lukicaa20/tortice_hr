@@ -37,10 +37,6 @@ function NaruciTortu() {
   };
 
   const whatsappMessage = useMemo(() => {
-    const designText = designImage
-      ? `${designImage.name} (sliku šaljem posebno u WhatsAppu)`
-      : "Nije dodana";
-
     return [
       "Pozdrav, želim naručiti bento torticu.",
       "",
@@ -48,7 +44,6 @@ function NaruciTortu() {
       `Email ili telefon: ${formData.contact}`,
       `Datum preuzimanja: ${formData.pickupDate}`,
       `Okus: ${formData.flavor}`,
-      `Dizajn po slici: ${designText}`,
       `Napomene: ${formData.notes || "Nema napomena"}`,
       "Cijena: od 20€",
     ].join("\n");
@@ -127,16 +122,6 @@ function NaruciTortu() {
               </option>
             ))}
           </select>
-        </label>
-
-        <label className="order-form__field order-form__field--file">
-          <span>Dizajn po slici</span>
-          <input type="file" accept="image/*" onChange={handleImageChange} />
-          <small>
-            {designImage
-              ? designImage.name
-              : "Dodajte inspiraciju ako je imate."}
-          </small>
         </label>
 
         <label className="order-form__field">
