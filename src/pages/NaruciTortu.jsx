@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 
-const whatsappPhone = "385958910462";
+const whatsappPhone = "385915248121";
 
 const flavors = [
   "Pistacija-malina",
